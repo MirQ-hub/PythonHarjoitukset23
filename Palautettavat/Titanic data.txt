@@ -1,0 +1,1 @@
+https://github.com/MirQ-hub/PythonHarjoitukset23/blob/main/Titanic%20dataset%20cleaning%20palautettava.ipynb
