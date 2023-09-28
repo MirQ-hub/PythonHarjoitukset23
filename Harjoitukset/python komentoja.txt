@@ -1,0 +1,474 @@
+Python commends
+
+  """this is function"""
+def printHellofunc():#defining name for function
+    print("hello world from function")
+
+->printHellofunc() #calls function
+=hello world from function
+
+def function2():
+    return "this is return value"
+
+def calculateSum(input1, input2): #function with two inputs and a return value
+    return input1 + input2
+
+print("")
+-----------------------------------------------------------------------------------------------------------------------
+import pandas as pd asentaa pandas kirjaston jolla voidaan lukea eri tiedostoja
+
+df=dataframe
+---
+CSV taulukon lukeminen
+
+df = pd.read_csv(r"csv tiedoston polku.csv")  -> luetaan seuraavalla rivillä komennolla df -> aukaisee taulukkonäkymän
+
+df.info() -> antaa taulukkojen solujen arvojen tiedot
+
+df.describe() antaa lukumäärät, keskiarvon ja prosentuaaliset määrät taulukosta
+
+df.hist() -> tekee histogrammin tiedoista
+df["Age"].hist(bins=80) -> rakentaa histogrammin Age sarakkeesta, histogrammin lukumäääräväli 0-80
+---
+Excel taulukon lukeminen
+
+df_excel=pd_excel(r"osoite.xlsx")
+
+df_excel.head() -> rakentaa taulukon excel taulukosta
+
+df_excel.info()->sarakkeiden tiedot
+
+df_excel.hist()-> histogrammi
+---
+Tekstitiedoston lukeminen
+
+my_file = open(r."tekstitiedoston osoite.txt") hakee
+content = my_file.read() lukee
+print(content) tulostaa
+my_file.close() sulkee tiedoston
+
+----
+#reading csv using Python in-built functions
+
+import csv
+
+#open csv file
+file=open(r"c:\2022-2023\PYTHON, ville majava\titanic_for_exercise.csv")
+
+#read csv file
+reader = csv.reader(file)
+
+i=0 #pohjustus i arvolle
+data=[] #pohjustus listalle
+
+#print reader lines
+for lines in reader:
+
+    #data.append(lines)
+    print(lines)
+    i = i +1 
+    if i == 10:
+        break
+
+print(data[0]) tulostaa ensimmäisen mahdollisen rivin. 
+
+    #close csv file
+file.close()
+-----------------------------------------------------------------------------------------------------------------------------------
+when the print function encounters a \n it displays a new line 
+
+find(name)
+
+# Print the first element in the string
+
+print(name[0])
+
+Negative index can help us to count the element from the end of the string.
+
+# Print the last element in the string
+
+print(name[-1])
+
+We can find the number of characters in a string by using len, short for length:
+# Find the length of string
+
+len("Michael Jackson")
+
+[Tip]: When taking the slice, the first number means the index (start at 0), and the second number means the length from the index to the last element you want (start at 1)
+# Take the slice on variable name with only index 0 to index 3
+
+name[0:4]
+
+# Take the slice on variable name with only index 8 to index 11
+
+name[8:12]
+
+We can also input a stride value as follows, with the '2' indicating that we are selecting every second variable:
+# Get every second element. The elments on index 1, 3, 5 ...
+
+name[::2]
+
+We can also incorporate slicing with the stride. In this case, we select the first five elements and then use the stride:
+# Get every second element in the range from index 0 to index 4
+
+name[0:5:2]
+
+Back slashes represent the beginning of escape sequences. Escape sequences represent strings that may be difficult to input. For example, back slash "n" represents a new line. The output is given by a new line after the back slash "n" is encountered:
+# New line escape sequence
+
+print(" Michael Jackson \n is the best" )
+
+# Convert all the characters in string to upper case
+
+a = "Thriller is the sixth studio album"
+print("before upper:", a)
+b = a.upper()
+print("After upper:", b)
+
+# Replace the old substring with the new target substring is the segment has been found in the string
+
+a = "Michael Jackson is the best"
+b = a.replace('Michael', 'Janet')
+b = "Janet Jackson is the best"
+
+# Create a list
+
+L = ["Michael Jackson", 10.1, 1982]
+# Sample List
+
+["Michael Jackson", 10.1, 1982, [1, 2], ("A", 1)]
+
+# List slicing
+
+L[3:5]
+
+# Use extend to add elements to list
+
+L = [ "Michael Jackson", 10.2]
+L.extend(['pop', 10])
+
+Another similar method is append. If we apply append instead of extend, we add one element to the list:
+# Use append to add elements to list
+
+L = [ "Michael Jackson", 10.2]
+L.append(['pop', 10])
+
+Each time we apply a method, the list changes. If we apply extend we add two new elements to the list. The list L is then modified by adding two new elements:
+L = [ "Michael Jackson", 10.2]
+L.extend(['pop', 10])
+L
+
+We can also delete an element of a list using the del command:
+del(A[0])
+
+We can convert a string to a list using split. For example, the method split translates every group of characters separated by a space into an element in a list:
+# Split the string, default is by space
+
+'hard rock'.split()
+
+# Split the string by comma
+
+'A,B,C,D'.split(',')
+
+# Copy (copy by reference) the list A
+
+A = ["hard rock", 10, 1.2]
+B = A
+
+# Clone (clone by value) the list A
+
+B = A[:]
+
+Retrieve the elements stored at index 1, 2 and 3 of a_list.
+a_list[1:4]
+
+list=["Watch", "Laptop", "Shoes", "Pen", "Clothes"]
+print(list[0]) tulostaa listan ensimmäisen tavaran
+print(list[-1])tulostaa listan viimeisen tavaran
+print(list[1:3]) tulostaa listan toisen ja kolmannen tavaran ['Watch', 'Laptop', 'Shoes', 'Pen', 'Clothes']
+
+Instead of "Pen" I want to buy "Notebook" let's change the item stored in the list.
+list[3] = "Notebook"
+
+# Print the type of value on each index
+
+print(type(tuple1[0]))
+print(type(tuple1[1]))
+print(type(tuple1[2]))
+
+# Concatenate two tuples
+
+tuple2 = tuple1 + ("hard rock", 10)
+
+Slice from index 0 to index 2
+
+tuple2[0:3]
+len(tuple2) pituus
+
+A tuple can contain another tuple as well as other more complex data types. This process is called 'nesting'. Consider the following tuple with several elements:
+NestedT =(1, 2, ("pop", "rock") ,(3,4),("disco",(1,2)))
+--------------------------
+Dictonarys and lists
+
+A dictionary consists of keys and values. 
+Dict = {"key1": 1, "key2": "2", "key3": [3, 3, 3], "key4": (4, 4, 4), ('key5'): 5, (0, 1): 6}
+Dict["key1"]
+Dict[(0, 1)]
+
+Each key is separated from its value by a colon ":". Commas separate the items, and the whole dictionary is enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this "{}".
+
+release_year_dict.keys()   antaa avaimet
+release_year_dict.values() antaa arvot
+del(release_year_dict['Thriller']) poistaa avaimen ja arvon
+'The Bodyguard' in release_year_dict hakutoiminto
+
+The Albums Back in Black, The Bodyguard and Thriller have the following music recording sales in millions 50, 50 and 65 respectively:
+
+a) Create a dictionary album_sales_dict where the keys are the album name and the sales in millions are the values.
+album_sales_dict = {"The Bodyguard":50, "Back in Black":50, "Thriller":65}
+
+inventory ={} luo tyhjän taulun
+
+lisätään tauluun sisältöä
+
+Nimetään tuotteetn
+Product Name= Mobile phone
+Product Quantity= 5
+Product price= 20000
+Product Release Year= 2020
+
+ProductNo1 = "Mobile Phone"
+ProductNo1_quantity = 5
+ProductNo1_price = 20000
+ProductNo1_releaseYear= 2020
+
+ Add the details in inventory
+inventory["ProductNo1"]= ProductNo1
+inventory["ProductNo1_quantity"]= ProductNo1_quantity
+inventory["ProductNo1_price"]= ProductNo1_price
+inventory["ProductNo1_releaseYear"]=ProductNo1_releaseYear
+
+
+Store the second product details in a variable.
+ProductNo2 = "Laptop"
+ProductNo2_quantity = 10
+ProductNo2_price = 50000
+ProductNo2_releaseYear= 2023
+
+ Add the details in inventory
+inventory["ProductNo2"]= ProductNo2
+inventory["ProductNo2_quantity"]= ProductNo2_quantity
+inventory["ProductNo2_price"]= ProductNo2_price
+inventory["ProductNo2_releaseYear"]=ProductNo2_releaseYear
+
+print(inventory) tulostaa inventory listan
+
+Check if ProductNo1_releaseYear and ProductNo2_releaseYear is in the inventory
+"ProductNo1_releaseYear" in inventory
+"ProductNo2_releaseYear" in inventory
+
+Delete release year of both the products from the inventory
+
+del(inventory["ProductNo1_releaseYear"])
+del(inventory["ProductNo2_releaseYear"])
+
+-------------------------------
+Sets
+
+unique elements
+not orderet
+no duplicate values in a set 
+set()
+set.add("")
+set.remove("")
+"" in set=  true/false
+
+album1 & album2 valitsee valituista tauluista ne arvot jotka on molemmissa tauluissa ja luo kolmannen taulun album3, johon kuuluvat arvot jotka olivat molemmissa tauluissa.  
+what is the result of the following operation : {'a','b'} &{'a'}
+{"a}   the intersection operation finds the elements that are in both sets
+# Use intersection method to find the intersection of album_list1 and album_list2
+
+album_set1.intersection(album_set2)  
+
+album_set_1.union(album_set_2)  -> molempien albumien tiedot
+# Find the union of two sets
+album_set1.union(album_set2)
+
+album_set_3.issubset(album_set_1) true/false sisätääkö albumi kolme samat tiedot kuin albumi yksi. 
+
+# Find the difference in set1 but not set2
+
+album_set1.difference(album_set2)  
+You only need to consider elements in album_set1; all the elements in album_set2, including the intersection, are not included.
+The elements in album_set2 but not in album_set1 is given by:
+album_set2.difference(album_set1)  
+---------------------------------------
+Loops
+
+for i in range(0, 8):
+    print(i)
+
+# Use for loop to change the elements in list
+
+squares = ['red', 'yellow', 'green', 'purple', 'blue']
+
+for i in range(0, 5):
+    print("Before square ", i, 'is',  squares[i])
+    squares[i] = 'white'
+    print("After square ", i, 'is',  squares[i])
+
+Before square  0 is red
+After square  0 is white
+Before square  1 is yellow
+After square  1 is white
+Before square  2 is green
+After square  2 is white
+Before square  3 is purple
+After square  3 is white
+Before square  4 is blue
+After square  4 is white
+
+# Loop through the list and iterate on both index and element value
+
+squares=['red', 'yellow', 'green', 'purple', 'blue']
+
+for i, square in enumerate(squares):
+    print(i, square)
+
+0 red
+1 yellow
+2 green
+3 purple
+4 blue
+
+While Loop Example
+
+dates = [1982, 1980, 1973, 2000]
+
+i = 0
+year = dates[0]
+
+while(year != 1973):    
+    print(year)
+    i = i + 1
+    year = dates[i]
+    
+
+print("It took ", i ,"repetitions to get out of loop.")
+
+1982
+1980
+It took  2 repetitions to get out of loop.
+
+Key point of While Loop:
+A while loop repeatedly executes a block of code as long as a given condition is true.
+It does not have a fixed number of iterations but continues executing until the condition becomes false.
+The condition is checked before each iteration, and if it's false initially, the code block is skipped entirely.
+The condition is typically based on a variable or expression that can change during the execution of the loop.
+It provides more flexibility in terms of controlling the loop's execution based on dynamic conditions.
+
+Key point of For Loop:
+A for loop iterates over a sequence (such as a list, string, or range) or any object that supports iteration.
+It has a predefined number of iterations based on the length of the sequence or the number of items to iterate over.
+It automatically handles the iteration and does not require maintaining a separate variable for tracking the iteration count.
+It simplifies the code by encapsulating the iteration logic within the loop itself.
+It is commonly used when you know the exact number of iterations or need to iterate over each item in a collection.
+
+Genres=[ 'rock', 'R&B', 'Soundtrack', 'R&B', 'soul', 'pop']
+for Genre in Genres:
+    print(Genre)
+
+Write a while loop to display the values of the Rating of an album playlist stored in the list PlayListRatings. If the score is less than 6, exit the loop. The list PlayListRatings is given by: PlayListRatings = [10, 9.5, 10, 8, 7.5, 5, 10, 10]
+
+PlayListRatings = [10, 9.5, 10, 8, 7.5, 5, 10, 10]
+i = 0
+rating = PlayListRatings[0]
+while(i < len(PlayListRatings) and rating >= 6):
+    print(rating)
+    i = i + 1 
+    rating = PlayListRatings[i] 
+
+ Write a while loop to copy the strings 'orange' of the list squares to the list new_squares. Stop and exit the loop if the value on the list is not 'orange':  
+squares = ['orange', 'orange', 'purple', 'blue ', 'orange']
+new_squares = []
+i = 0
+while(i < len(squares) and squares[i] == 'orange'):
+    new_squares.append(squares[i])
+    i = i + 1
+print (new_squares)
+
+Your brother needs to write an essay on the animals whose names are made of 7 letters. Help him find those animals through a while loop and create a separate list of such animals.
+
+Animals = ["lion", "giraffe", "gorilla", "parrots", "crocodile","deer", "swan"]
+New = []
+i=0
+while i<len(Animals):
+    j=Animals[i]
+    if(len(j)==7):
+        New.append(j)
+    i=i+1
+print(New)
+
+Your little brother has just learned multiplication tables in school. Today he has learned tables of 6 and 7. Help him memorise both the tables by printing them using for loop.
+print("Multiplication table of 6:")
+for i in range (10):
+    print("6*",i,"=",6*i)
+print("Multiplication table of 7:")
+for i in range (10):
+    print("7*",i,"=",7*i)
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

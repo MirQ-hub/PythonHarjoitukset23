@@ -1,0 +1,5 @@
+Data Analysis course content
+- Big and open data
+- Statistical data analysis
+- Tools of data analysis
+- Data visualization
