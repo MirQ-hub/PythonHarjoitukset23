@@ -49,8 +49,3 @@ if file is not None:
         st.line_chart(df.loc[mask], x="Time", y="Price")
     except Exception as e:
         st.write(e)
-
-
-
-
-
